@@ -15,6 +15,9 @@ inputs = {
 outputs = { self, nixpkgs, home-manager, nixos-wsl, nixvim, ... }: {
   nixosConfigurations.wsl-laptop = nixpkgs.lib.nixosSystem {
 	system = "x86_64-linux";
+	specialArgs = {
+	  inherit self;
+	};
 	modules = [
 	  ./hosts/wsl-laptop/default.nix
 	  nixos-wsl.nixosModules.default

@@ -23,15 +23,16 @@
   };
 
   programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        name = "curtself";
-        email = "curtself.cs@gmail.com";
-      };
-      init.defaultBranch = "main";
-    };
+	enable = true;
+
+	settings = {
+	  user.name = "curtself";
+	  user.email = "curtself.cs@gmail.com";
+	  init.defaultBranch = "main";
+	  core.editor = "nvim";
+	};
   };
+
   imports = [
     ./tmux.nix
     ./nvim.nix
