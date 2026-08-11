@@ -30,6 +30,22 @@ outputs = { self, nixpkgs, home-manager, nixos-wsl, nixvim, ... }: {
 	  }
     ];
   };
+  nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
+	system = "x86_64-linux";
+	specialArgs = {
+	  inherit self;
+	};
+	modules = [
+	  ./hosts/nixos-laptop/default.nix
+	  home-manager.nixosModules.home-manager {
+		home-manager.useGlobalPkgs = true;
+		home-manager.useUserPackages = true;
+		home-manager.sharedModules = [
+		  nixvim.homeManagerModules.nixvim
+		];
+	  }
+    ];
+  };
 };
 
 }
