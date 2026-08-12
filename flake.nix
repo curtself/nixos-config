@@ -10,9 +10,13 @@ inputs = {
   nixvim = {
 	url = "github:nix-community/nixvim/nixos-26.05";
   };
+  zen-browser = {
+	url = "github:youwen5/zen-browser-flake";
+	inputs.nixpkgs.follows = "nixpkgs";
+  };
 };
 
-outputs = { self, nixpkgs, home-manager, nixos-wsl, nixvim, ... }: {
+outputs = { self, nixpkgs, home-manager, nixos-wsl, nixvim, zen-browser, ... }: {
   nixosConfigurations.wsl-laptop = nixpkgs.lib.nixosSystem {
 	system = "x86_64-linux";
 	specialArgs = {
