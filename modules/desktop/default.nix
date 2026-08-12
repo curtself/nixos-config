@@ -26,6 +26,8 @@
 	mako
 	xwayland-satellite
 	rofi
+	cliphist
+	wl-clipboard
 	#inputs.zen-browser.packages.x86_64-linux.default
   ];
 
