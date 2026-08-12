@@ -37,7 +37,7 @@ outputs = { self, nixpkgs, home-manager, nixos-wsl, nixvim, zen-browser, ... }: 
   nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
 	system = "x86_64-linux";
 	specialArgs = {
-	  inherit self;
+	  inherit self zen-browser;
 	};
 	modules = [
 	  ./hosts/nixos-laptop/default.nix
