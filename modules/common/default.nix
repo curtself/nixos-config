@@ -12,6 +12,9 @@
     "nix-command"
     "flakes"
   ];
+  imports = [
+    "sshd.nix"
+  ];
   environment.systemPackages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
