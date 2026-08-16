@@ -13,7 +13,7 @@
     "flakes"
   ];
   imports = [
-    "sshd.nix"
+    ./sshd.nix
   ];
   environment.systemPackages = with pkgs; [
     nerd-fonts.jetbrains-mono
