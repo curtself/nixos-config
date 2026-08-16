@@ -8,6 +8,10 @@
     fzf
     bat
     ripgrep
+	nixd
+	nixfmt
+	go
+	gopls
   ];
 
   programs.bash = {
@@ -22,7 +26,6 @@
 		source "$(fzf-share)/completion.bash"
 	  fi
       export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
-      fastfetch
     '';
   };
 
@@ -44,7 +47,7 @@
 
   imports = [
     ./tmux.nix
-    ./nvim.nix
+    ./nvim
   ];
 
  }
