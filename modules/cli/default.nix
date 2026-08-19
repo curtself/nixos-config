@@ -12,6 +12,7 @@
 	nixfmt
 	go
 	gopls
+	lazygit
   ];
 
   programs.bash = {
