@@ -68,5 +68,23 @@
     #  action = "<cmd>lua require('conform').format()<CR>";
     #  options.desc = "Format buffer";
     #}
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+      options.desc = "Show diagnostic";
+    }
+    {
+      mode = "n";
+      key = "[d";
+      action = "<cmd>lua vim.diagnostic.goto_prev()<CR>";
+      options.desc = "Previous diagnostic";
+    }
+    {
+      mode = "n";
+      key = "]d";
+      action = "<cmd>lua vim.diagnostic.goto_next()<CR>";
+      options.desc = "Next diagnostic";
+    }
   ];
 }

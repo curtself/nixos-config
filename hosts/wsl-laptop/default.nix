@@ -13,6 +13,15 @@
 	wl-clipboard
   ];
 
+  #environment.variables = {
+  #  XDG_RUNTIME_DIR = "/mnt/wslg/runtime-dir";
+  #  WAYLAND_DISPLAY = "wayland-0";
+  #};
+
+  #systemd.tmpfiles.rules = [
+  #  "L+ /run/user/1000/wayland-0 - - - - /mnt/wslg/runtime-dir/wayland-0"
+  #];
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

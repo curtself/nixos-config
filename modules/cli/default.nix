@@ -13,6 +13,7 @@
 	go
 	gopls
 	lazygit
+	gcc
   ];
 
   programs.bash = {
