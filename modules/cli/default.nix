@@ -28,6 +28,7 @@
 		source "$(fzf-share)/completion.bash"
 	  fi
       export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
+	  alias tlsg="/home/curt/projects/ssl-tools-port/dist/tlsg"
     '';
   };
 
