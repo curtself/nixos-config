@@ -1,4 +1,9 @@
-{ self, config, pkgs, ... }:
+{
+  self,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../../modules/common
@@ -9,12 +14,14 @@
   wsl.defaultUser = "curt";
   wsl.wslConf.network.generateResolvConf = false;
 
-  networking.nameservers = [ "10.5.1.254" ];
-  networking.search = [ "sdccd.loc" ];
+  environment.etc."resolv.conf".text = ''
+    nameserver 10.5.1.254
+    search sdccd.loc
+  '';
 
   # likely only WSL hosts will need wl-clipboard (for neovim)
   environment.systemPackages = with pkgs; [
-	wl-clipboard
+    wl-clipboard
   ];
 
   #environment.variables = {
@@ -33,10 +40,7 @@
     users.curt = import ../../home/curt.nix;
   };
 
-  system.configurationRevision = 
-	if self ? rev then
-	  self.rev
-	else "dirty" ;
+  system.configurationRevision = if self ? rev then self.rev else "dirty";
 
   system.stateVersion = "26.05";
 }
