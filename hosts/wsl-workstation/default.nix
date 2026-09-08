@@ -14,6 +14,7 @@
   wsl.defaultUser = "curt";
   wsl.wslConf.network.generateResolvConf = false;
 
+  networking.resolvconf.enable = false;
   environment.etc."resolv.conf".text = ''
     nameserver 10.5.1.254
     search sdccd.loc
