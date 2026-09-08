@@ -34,6 +34,23 @@ outputs = { self, nixpkgs, home-manager, nixos-wsl, nixvim, zen-browser, ... }: 
 	  }
     ];
   };
+  nixosConfigurations.wsl-workstation = nixpkgs.lib.nixosSystem {
+	system = "x86_64-linux";
+	specialArgs = {
+	  inherit self;
+	};
+	modules = [
+	  ./hosts/wsl-workstation/default.nix
+	  nixos-wsl.nixosModules.default
+	  home-manager.nixosModules.home-manager {
+		home-manager.useGlobalPkgs = true;
+		home-manager.useUserPackages = true;
+		home-manager.sharedModules = [
+		  nixvim.homeManagerModules.nixvim
+		];
+	  }
+	];
+  };
   nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
 	system = "x86_64-linux";
 	specialArgs = {
