@@ -2,19 +2,19 @@
 
 {
   home.packages = with pkgs; [
-	wget
+    wget
     fastfetch
     neovim
     tree
     fzf
     bat
     ripgrep
-	nixd
-	nixfmt
-	go
-	gopls
-	lazygit
-	gcc
+    nixd
+    nixfmt
+    go
+    gopls
+    lazygit
+    gcc
   ];
 
   programs.bash = {
@@ -24,29 +24,33 @@
       vi = "nvim";
     };
     initExtra = ''
-	  if command -v fzf-share >/dev/null; then
-		source "$(fzf-share)/key-bindings.bash"
-		source "$(fzf-share)/completion.bash"
-	  fi
-      export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
-	  alias tlsg="/home/curt/projects/ssl-tools-port/dist/tlsg"
+      	  if command -v fzf-share >/dev/null; then
+      		source "$(fzf-share)/key-bindings.bash"
+      		source "$(fzf-share)/completion.bash"
+      	  fi
+          export PS1="\[\e[38;5;75m\]\u@\h \[\e[38;5;113m\]\w \[\e[38;5;189m\]\$ \[\e[0m\]"
+      	  alias tlsg="/home/curt/projects/ssl-tools-port/dist/tlsg-linux-amd64"
     '';
   };
 
   programs.git = {
-	enable = true;
+    enable = true;
 
-	settings = {
-	  user.name = "curtself";
-	  user.email = "curtself.cs@gmail.com";
-	  init.defaultBranch = "main";
-	  core.editor = "nvim";
-	};
+    settings = {
+      user.name = "curtself";
+      user.email = "curtself.cs@gmail.com";
+      init.defaultBranch = "main";
+      core.editor = "nvim";
+    };
   };
 
   programs.fzf = {
-	enable = true;
-	enableBashIntegration = true;
+    enable = true;
+    enableBashIntegration = true;
+  };
+
+  services.ssh-agent = {
+    enable = true;
   };
 
   imports = [
@@ -54,4 +58,4 @@
     ./nvim
   ];
 
- }
+}
