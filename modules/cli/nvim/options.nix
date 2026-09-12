@@ -8,6 +8,8 @@
 	tabstop = 4;
 	smartindent = true;
 	autoindent = true;
+	splitright = true;
+	splitbelow = true;
   };
 
   globals = {
