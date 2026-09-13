@@ -1,34 +1,40 @@
-{ pkgs, lib, zen-browser, inputs, ... }:
+{
+  pkgs,
+  lib,
+  zen-browser,
+  inputs,
+  ...
+}:
 
 {
   services.xserver = {
-	enable = true;
-	#windowManager.qtile.enable = true;
+    enable = true;
+    #windowManager.qtile.enable = true;
   };
 
   programs.firefox.enable = true;
   programs.dms-shell = {
-	enable = true;
-	systemd.enable = true;
+    enable = true;
+    systemd.enable = true;
   };
   programs.niri = {
-	enable = true;
+    enable = true;
   };
-  environment.sessionVariables.NIXOS_OZONE_WL = "1"; 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   environment.systemPackages = with pkgs; [
     fuzzel
-	alacritty
-	swaylock
-	swayidle
-	mako
-	xwayland-satellite
-	rofi
-	cliphist
-	wl-clipboard
-	zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+    alacritty
+    swaylock
+    swayidle
+    mako
+    xwayland-satellite
+    rofi
+    cliphist
+    wl-clipboard
+    zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
 }

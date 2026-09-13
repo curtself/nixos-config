@@ -1,5 +1,10 @@
 # hosts/nixos-laptop/default.nix
-{ self, config, pkgs, ... }:
+{
+  self,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -7,7 +12,7 @@
     ../../modules/common
     ../../modules/users/curt.nix
     # include the desktop module later
-	../../modules/desktop
+    ../../modules/desktop
   ];
 
   # Laptop-specific NixOS configuration goes here.
@@ -25,10 +30,7 @@
     users.curt = import ../../home/curt.nix;
   };
 
-  system.configurationRevision = 
-	if self ? rev then
-	  self.rev
-	else "dirty" ;
+  system.configurationRevision = if self ? rev then self.rev else "dirty";
 
   system.stateVersion = "26.05";
 }

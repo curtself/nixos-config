@@ -1,4 +1,9 @@
-{ self, config, pkgs, ... }:
+{
+  self,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../../modules/common
@@ -10,7 +15,7 @@
 
   # likely only WSL hosts will need wl-clipboard (for neovim)
   environment.systemPackages = with pkgs; [
-	wl-clipboard
+    wl-clipboard
   ];
 
   #environment.variables = {
@@ -29,10 +34,7 @@
     users.curt = import ../../home/curt.nix;
   };
 
-  system.configurationRevision = 
-	if self ? rev then
-	  self.rev
-	else "dirty" ;
+  system.configurationRevision = if self ? rev then self.rev else "dirty";
 
   system.stateVersion = "26.05";
 }

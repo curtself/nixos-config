@@ -2,13 +2,13 @@
 
 {
   programs.nixvim = {
-	enable = true;
-	colorscheme = "habamax";
+    enable = true;
+    colorscheme = "habamax";
 
-	imports = [
-	  ./options.nix
-	  ./keymaps.nix
-	  ./lsp.nix
-	];
+    imports = [
+      ./options.nix
+      ./keymaps.nix
+      ./lsp.nix
+    ];
   };
 }

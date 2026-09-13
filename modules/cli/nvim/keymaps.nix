@@ -8,42 +8,43 @@
       action = ":Ex<CR>";
       options.desc = "Explore command";
     }
-	{ mode = "n";
-	  key = "<leader>rc";
-	  action = ":e ~/nixos-config/modules/cli/nvim/default.nix<CR>";
-	  options.desc = "Edit config";
-	}
-	{
-	  mode = "i";
-	  key = "jj";
-	  action = "<ESC>";
-	  options.desc = "Allows jj to enter normal mode";
-	}
-	{ 
-	  mode = "n";
-	  key = "<C-h>";
-	  action = "<C-w>h";
-	  options.desc = "Move to left windows";
-	}
-	{
-	  mode = "n";
-	  key = "<C-j>";
-	  action = "<C-w>j";
-	  options.desc = "Move to bottom window";
-	}
-	{
-	  mode = "n";
-	  key = "<C-k>";
-	  action = "<C-w>k";
-	  options.desc = "Move to top window";
-	}
-	{
-	  mode = "n";
-	  key = "<C-l>";
-	  action = "<C-w>l";
-	  options.desc = "Move to right window";
-	}
-	{
+    {
+      mode = "n";
+      key = "<leader>rc";
+      action = ":e ~/nixos-config/modules/cli/nvim/default.nix<CR>";
+      options.desc = "Edit config";
+    }
+    {
+      mode = "i";
+      key = "jj";
+      action = "<ESC>";
+      options.desc = "Allows jj to enter normal mode";
+    }
+    {
+      mode = "n";
+      key = "<C-h>";
+      action = "<C-w>h";
+      options.desc = "Move to left windows";
+    }
+    {
+      mode = "n";
+      key = "<C-j>";
+      action = "<C-w>j";
+      options.desc = "Move to bottom window";
+    }
+    {
+      mode = "n";
+      key = "<C-k>";
+      action = "<C-w>k";
+      options.desc = "Move to top window";
+    }
+    {
+      mode = "n";
+      key = "<C-l>";
+      action = "<C-w>l";
+      options.desc = "Move to right window";
+    }
+    {
       mode = "n";
       key = "<leader>y";
       action = "\"+y";

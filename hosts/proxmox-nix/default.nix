@@ -9,7 +9,7 @@
   ];
 
   # Laptop-specific NixOS configuration goes here.
-# Bootloader.
+  # Bootloader.
   boot.loader.grub = {
     enable = true;
     device = "/dev/sda";
@@ -23,10 +23,7 @@
     users.curt = import ../../home/curt.nix;
   };
 
-  system.configurationRevision = 
-	if self ? rev then
-	  self.rev
-	else "dirty" ;
+  system.configurationRevision = if self ? rev then self.rev else "dirty";
 
   system.stateVersion = "26.05";
 }
