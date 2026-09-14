@@ -15,6 +15,7 @@
     gopls
     lazygit
     gcc
+	jq
   ];
 
   programs.bash = {
