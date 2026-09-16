@@ -16,10 +16,12 @@
   ];
 
   # Laptop-specific NixOS configuration goes here.
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
-  };
+#  boot.loader.grub = {
+#    enable = true;
+#    device = "/dev/sda";
+#  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "samsung-tablet";
   networking.networkmanager.enable = true;
