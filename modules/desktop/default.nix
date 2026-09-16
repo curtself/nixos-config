@@ -7,6 +7,10 @@
 }:
 
 {
+  imports = [
+    ./sddm.nix
+  ];
+
   services.xserver = {
     enable = true;
     #windowManager.qtile.enable = true;
