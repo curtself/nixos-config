@@ -9,6 +9,7 @@
 {
   imports = [
     ./sddm.nix
+	./plymouth.nix
   ];
 
   services.xserver = {

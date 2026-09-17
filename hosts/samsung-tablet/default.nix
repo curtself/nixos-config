@@ -1,4 +1,4 @@
-# hosts/nixos-laptop/default.nix
+# hosts/samsung-tablet/default.nix
 {
   self,
   config,
