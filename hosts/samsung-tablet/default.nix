@@ -11,15 +11,17 @@
 
     ../../modules/common
     ../../modules/users/curt.nix
-    # include the desktop module 
+    # include the desktop module
     ../../modules/desktop
+    # touch-related niri patches
+    ../../modules/desktop/touch-niri.nix
   ];
 
   # Laptop-specific NixOS configuration goes here.
-#  boot.loader.grub = {
-#    enable = true;
-#    device = "/dev/sda";
-#  };
+  #  boot.loader.grub = {
+  #    enable = true;
+  #    device = "/dev/sda";
+  #  };
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
