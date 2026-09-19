@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   plugins.lsp = {
@@ -26,6 +26,19 @@
         cmd = [ "nixd" ];
         filetypes = [ "nix" ];
       };
+      marksman = {
+        enable = true;
+        cmd = [
+          "marksman"
+          "server"
+        ];
+        filetypes = [ "markdown" ];
+        rootMarkers = [ ".git" ];
+      };
     };
   };
+  plugins.render-markdown = {
+    enable = true;
+  };
+
 }

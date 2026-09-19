@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     wget
     fastfetch
-    neovim
     tree
     fzf
     bat
@@ -16,6 +15,7 @@
     lazygit
     gcc
 	jq
+	marksman
   ];
 
   programs.bash = {

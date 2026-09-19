@@ -17,14 +17,15 @@
     ../../modules/desktop/touch-niri.nix
   ];
 
-  # Laptop-specific NixOS configuration goes here.
-  #  boot.loader.grub = {
-  #    enable = true;
-  #    device = "/dev/sda";
-  #  };
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPatches = [
+    {
+      name = "samsung-sam0201-lis2hh12";
+      patch = ../../modules/desktop/samsung-tablet-accel.patch;
+    }
+  ];
   networking.hostName = "samsung-tablet";
   networking.networkmanager.enable = true;
   networking.wireless.enable = true;
