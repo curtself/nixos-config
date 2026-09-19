@@ -4,7 +4,7 @@ let
     owner = "GGEZUS";
     repo = "niri-tablet";
     rev = "v26.04.18";
-    hash = ""; # Leave empty on first run; Nix will fail and provide the correct hash
+    hash = "sha256-yceNeLKcv7HNc2UxkP+Ka1oa9Zx96OhYUvlESzYVI3s="; # Leave empty on first run; Nix will fail and provide the correct hash
   };
 
   niri-tablet = pkgs.niri.overrideAttrs (previousAttrs: {
@@ -21,5 +21,3 @@ in
 {
  programs.niri.package = niri-tablet;
 }
-
-

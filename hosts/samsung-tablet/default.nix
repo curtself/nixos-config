@@ -19,6 +19,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.kernelModules = [ "i915" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelPatches = [
     {
