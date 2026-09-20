@@ -30,6 +30,7 @@
   security.pam.services.swaylock = { };
 
   environment.systemPackages = with pkgs; [
+	acpi
     fuzzel
     alacritty
     swaylock

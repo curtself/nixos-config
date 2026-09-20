@@ -1,5 +1,5 @@
---- /tmp/st_accel_i2c.c.orig	2026-09-19 14:12:34.660947264 -0700
-+++ drivers/iio/accel/st_accel_i2c.c	2026-09-19 14:09:41.294202642 -0700
+--- a/drivers/iio/accel/st_accel_i2c.c
++++ b/drivers/iio/accel/st_accel_i2c.c
 @@ -131,6 +131,7 @@
  MODULE_DEVICE_TABLE(of, st_accel_of_match);
  
