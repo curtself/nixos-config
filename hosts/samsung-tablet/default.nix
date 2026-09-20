@@ -18,6 +18,7 @@
   ];
 
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "i915" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -27,6 +28,7 @@
       patch = ../../modules/desktop/samsung-tablet-accel.patch;
     }
   ];
+  hardware.sensor.iio.enable = true;
   networking.hostName = "samsung-tablet";
   networking.networkmanager.enable = true;
   networking.wireless.enable = true;
