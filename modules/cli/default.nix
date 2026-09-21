@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     wget
+	netcat
+	dig
     fastfetch
     tree
     fzf

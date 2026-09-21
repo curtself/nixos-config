@@ -13,6 +13,7 @@
   wsl.enable = true;
   wsl.defaultUser = "curt";
 
+  networking.hostName = "wsl-laptop";
   # likely only WSL hosts will need wl-clipboard (for neovim)
   environment.systemPackages = with pkgs; [
     wl-clipboard
