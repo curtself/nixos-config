@@ -9,6 +9,7 @@
       ./options.nix
       ./keymaps.nix
       ./lsp.nix
+	  ./plugins.nix
     ];
   };
 }

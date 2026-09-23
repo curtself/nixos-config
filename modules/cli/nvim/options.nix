@@ -17,7 +17,7 @@
     maplocalleader = " ";
   };
 
-  # do highlighting on yank
+  # do highlighting on yank and define smart formatting
   extraConfigLua = ''
     	vim.api.nvim_create_autocmd("TextYankPost", {
     	  desc = "Highlight when yanking (copying) text",
