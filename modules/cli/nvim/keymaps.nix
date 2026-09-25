@@ -153,5 +153,18 @@
       action = "<cmd>Telescope help_tags<CR>";
       options.desc = "Help";
     }
+    {
+      mode = "n";
+      key = "<A-s>";
+      action = "<cmd>w<CR>";
+      options.desc = "Save buffer";
+    }
+    {
+      mode = "i";
+      key = "<A-s>";
+      action = "<Esc><cmd>w<CR>a";
+      options.desc = "Save buffer";
+    }
+
   ];
 }
