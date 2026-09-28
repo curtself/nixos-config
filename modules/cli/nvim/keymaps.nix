@@ -165,6 +165,35 @@
       action = "<Esc><cmd>w<CR>a";
       options.desc = "Save buffer";
     }
-
+    {
+      key = "<C-S-Up>";
+      action = "<Cmd>resize +2<CR>";
+      mode = "n";
+      options.desc = "Resize window up";
+    }
+    {
+      key = "<C-S-Down>";
+      action = "<Cmd>resize -2<CR>";
+      mode = "n";
+      options.desc = "Resize window down";
+    }
+    {
+      key = "<C-S-Left>";
+      action = "<Cmd>vertical resize -2<CR>";
+      mode = "n";
+      options.desc = "Resize window left";
+    }
+    {
+      key = "<C-S-Right>";
+      action = "<Cmd>vertical resize +2<CR>";
+      mode = "n";
+      options.desc = "Resize window right";
+    }
+    {
+      key = "<leader>vb";
+      action = "<C-v>";
+      mode = "n";
+	  options.desc = "Go into Visual Block mode";
+    }
   ];
 }
