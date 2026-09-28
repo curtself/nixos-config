@@ -12,6 +12,7 @@
     ripgrep
     nixd
     nixfmt
+	shfmt
     go
     gopls
     lazygit

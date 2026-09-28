@@ -35,6 +35,17 @@
         filetypes = [ "markdown" ];
         rootMarkers = [ ".git" ];
       };
+      bashls = {
+        enable = true;
+        cmd = [
+          "bash-language-server"
+          "start"
+        ];
+        filetypes = [
+          "sh"
+          "bash"
+        ];
+      };
     };
   };
   plugins.render-markdown = {
