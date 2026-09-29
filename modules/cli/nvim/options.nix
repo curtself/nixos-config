@@ -51,7 +51,29 @@
         )
       elseif vim.bo.filetype == "go" then
         vim.lsp.buf.format()
-      elseif vim.bo.filetype == "sh" or vim.bo.filetype == "bash" then
+      elseif vim.bo.filetype == "json" or vim.bo.filetype == "jsonc" then
+        local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+        local input = table.concat(lines, "\n") .. "\n"
+
+        vim.system(
+          { "jq", "." },
+          { stdin = input, text = true },
+          function(result)
+            if result.code ~= 0 then
+              vim.notify(result.stderr, vim.log.levels.ERROR)
+              return
+            end
+
+            vim.schedule(function()
+              local formatted = vim.split(result.stdout, "\n", { plain = true })
+              if formatted[#formatted] == "" then
+                table.remove(formatted)
+              end
+              vim.api.nvim_buf_set_lines(0, 0, -1, false, formatted)
+            end)
+          end
+        )
+	  elseif vim.bo.filetype == "sh" or vim.bo.filetype == "bash" then
         local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
         local input = table.concat(lines, "\n") .. "\n"
 
