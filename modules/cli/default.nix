@@ -5,6 +5,7 @@
     wget
 	netcat
 	dig
+	zip
     fastfetch
     tree
     fzf
