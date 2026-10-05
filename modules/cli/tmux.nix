@@ -67,10 +67,10 @@
       	  bind -n S-Right next-window
 
       	  # these binding need to be here so they load AFTER the resurrect plugin config
-         	  # set -g @resurrect-save 'S'
+       	  # set -g @resurrect-save 'S'
       	  # set -g @resurrect-restore 'R'
       	  bind C-s run-shell "#{@resurrect-save-script-path}"
-      	  bind C-r run-shell "#{@resurrect-restore-script-path}"
+      	  bind C-r run-shell "/home/curt/.tmux/resurrect/scripts/fix-resurrect.sh && #{@resurrect-restore-script-path}"
     '';
   };
 }
