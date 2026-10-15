@@ -16,6 +16,7 @@
     ./sshd.nix
   ];
   environment.systemPackages = with pkgs; [
+	openssl
     nerd-fonts.jetbrains-mono
   ];
 }
